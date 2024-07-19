@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { ExerciseProvider } from './contexts/Context';
+import ExerciseForm from './components/Form';
+import ExerciseList from './components/List';
+import './App.css'; // Para estilizar os componentes
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ExerciseProvider>
+      <div className="app">
+        <h1>Lista de Exercícios</h1>
+        <ExerciseForm />
+        <ExerciseList />
+      </div>
+    </ExerciseProvider>
   );
-}
+};
 
 export default App;
